@@ -1498,10 +1498,9 @@ pre code {
   width: 100%;
 }
 .with-love {
-  color: #000;
+  color: #ebe2cf;
   display: inline-block;
   margin: 0 5px;
-  animation: icon-animate 1.33s ease-in-out infinite;
 }
 @keyframes icon-animate {
   0%, 100% {
