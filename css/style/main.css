@@ -82,7 +82,7 @@ section {
   margin: 0 auto;
   transition: background-color 0.6s;
   padding: var(--space);
-  border-radius: 5px;
+  border-radius: 15px;
   -webkit-box-shadow: 1px 1px 5px 0 rgba(0,0,0,0.02), 1px 1px 15px 0 rgba(0,0,0,0.03);
   box-shadow: 1px 1px 5px 0 rgba(0,0,0,0.02), 1px 1px 15px 0 rgba(0,0,0,0.03);
   -webkit-transition: background-color 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.6s;
@@ -156,6 +156,11 @@ s {
   box-sizing: border-box;
   font-smoothing: antialiased;
   osx-font-smoothing: grayscale;
+}
+@media screen and (min-width: 1080px) {
+  *[id] {
+    scroll-margin-top: 60px;
+  }
 }
 a {
   color: var(--main-color);
@@ -589,7 +594,7 @@ overflows table td {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: -8px;
-  border-radius: 5px;
+  border-radius: 15px;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
@@ -604,7 +609,7 @@ overflows table td {
   margin-top: calc(2.25 * 16px + 32px);
   color: #444;
   background: #fff;
-  border-radius: 5px;
+  border-radius: 15px;
   -webkit-box-shadow: 1px 5px 15px 0 rgba(0,0,0,0.3);
   box-shadow: 1px 5px 15px 0 rgba(0,0,0,0.3);
   -webkit-box-pack: start;
@@ -750,7 +755,7 @@ overflows table td {
   margin: calc(var(--space) * -1) !important;
   margin-bottom: calc(var(--space) / 2) !important;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 15px;
 }
 .post-entry__header:empty,
 .post__header:empty {
@@ -1009,6 +1014,13 @@ overflows table td {
 }
 .header .header__right .dropdown-menus .dropdown-menu {
   padding: 10px;
+}
+@media screen and (min-width: 1080px) {
+  .header {
+    position: sticky;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
 }
 @media screen and (max-width: 764px) {
   .navbar__menus {
