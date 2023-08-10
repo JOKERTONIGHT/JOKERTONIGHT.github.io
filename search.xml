@@ -31,22 +31,16 @@
 </ol>]]></content>
   </entry>
   <entry>
-    <title>record</title>
-    <url>/2023/08/10/record/</url>
-    <content><![CDATA[<p>This blog is officially created on Aug 9th, 2023.</p>
-<p>It would be used for record.<br>Maybe some articles, maybe some learning notes, and maybe just some self-talkings.</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2023/08/07/hello-world/</url>
     <content><![CDATA[<p>欢迎！如果你碰巧找到这个小角落，请不要急着划走——这里当然没有什么故事，只有一点点被轻轻存放的时间。</p>
 ]]></content>
   </entry>
   <entry>
-    <title>about</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<p>Hello! This is <em>Tonight</em>, fancy meeting you here!</p>
+    <title>record</title>
+    <url>/2023/08/10/record/</url>
+    <content><![CDATA[<p>This blog is officially created on Aug 9th, 2023.</p>
+<p>It would be used for record.<br>Maybe some articles, maybe some learning notes, and maybe just some self-talkings.</p>
 ]]></content>
   </entry>
   <entry>
@@ -58,5 +52,11 @@
     <title>tags</title>
     <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>about</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<p>Hello! This is <em>Tonight</em>, fancy meeting you here!</p>
+]]></content>
   </entry>
 </search>
