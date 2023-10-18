@@ -22,10 +22,9 @@
       </categories>
   </entry>
   <entry>
-    <title>about</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<p>Hello! This is <em>Tonight</em>, fancy meeting you here!</p>
-]]></content>
+    <title>tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>categories</title>
@@ -33,8 +32,9 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
+    <title>about</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<p>Hello! This is <em>Tonight</em>, fancy meeting you here!</p>
+]]></content>
   </entry>
 </search>
