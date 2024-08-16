@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/helloWorld/</url>
+    <content><![CDATA[<p>欢迎！如果你碰巧找到这个小角落，请不要急着划走——</p>
+<p>这里当然没有什么惊喜，只有一点点被轻轻存放的时间。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Before Dawn</title>
     <url>/BeforeDawn/</url>
     <content><![CDATA[<p>‘ For the <em>shadow</em> ‘</p>
@@ -15,13 +22,6 @@
       <categories>
         <category>writings</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/helloWorld/</url>
-    <content><![CDATA[<p>欢迎！如果你碰巧找到这个小角落，请不要急着划走——</p>
-<p>这里当然没有什么惊喜，只有一点点被轻轻存放的时间。</p>
-]]></content>
   </entry>
   <entry>
     <title>我这里有一个故事</title>

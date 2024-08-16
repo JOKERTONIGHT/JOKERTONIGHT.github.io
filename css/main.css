@@ -1220,7 +1220,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ebc945;
+  background: #d9ffde;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2733,16 +2733,14 @@ ul.breadcrumb li + li:last-child {
   }
 }
 body {
-  background-image: url("/images/background.jpg");
+  background-image: url("/images/background.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
-}
-.content-wrap {
   opacity: 0.8;
 }
-.sidebar-inner {
-  background: rgba(255,255,255,0.8) none repeat scroll !important;
+.sidebar {
+  opacity: 0.9;
 }
 .header-inner {
   background: rgba(255,255,255,0.9);
@@ -2750,6 +2748,9 @@ body {
 .popup {
   opacity: 0.8;
 }
-.post-block {
-  background: rgba(255,255,255,0.8) none repeat scroll !important;
+.main-inner {
+  background-color: rgba(255,255,255,0);
+}
+.code-hidden {
+  display: none;
 }
