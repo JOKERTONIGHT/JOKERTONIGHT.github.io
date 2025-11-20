@@ -127,22 +127,37 @@
   function initNav() {
     var path = window.location.pathname;
     // Check if Home (About) page
-    // Assuming Home is '/' or '/index.html' or '/about/' based on user setup
-    var isHome = path === '/' || path === '/index.html' || path.startsWith('/about/');
+    // Assuming Home is '/' or '/index.html'
+    var isHome = path === '/' || path === '/index.html';
     
     if (isHome) {
-      // Hide extra menu items
+      // Hide extra menu items, keep Home and Blog
       var itemsToHide = [
         '.menu-item-movies',
         '.menu-item-categories',
         '.menu-item-archives',
         '.menu-item-search',
-        '.menu-item-tags'
+        '.menu-item-tags',
+        '.menu-item-about' // Hide about if it exists in menu
       ];
       
       itemsToHide.forEach(function(selector) {
         var el = document.querySelector(selector);
         if (el) el.style.display = 'none';
+      });
+    } else {
+      // Show everything on other pages (like /blog/)
+      var itemsToHide = [
+        '.menu-item-movies',
+        '.menu-item-categories',
+        '.menu-item-archives',
+        '.menu-item-search',
+        '.menu-item-tags',
+        '.menu-item-about'
+      ];
+      itemsToHide.forEach(function(selector) {
+        var el = document.querySelector(selector);
+        if (el) el.style.display = ''; // Reset to default (block/list-item)
       });
     }
   }
