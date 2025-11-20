@@ -37,8 +37,8 @@
 
   function draw() {
     ctx.clearRect(0, 0, w, h);
-    ctx.strokeStyle = 'rgba(174,194,224,0.8)'; // More visible
-    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = 'rgba(174,194,224,0.6)'; // More visible
+    ctx.lineWidth = 1.0;
     ctx.lineCap = 'round';
 
     for (var i = 0; i < rainDrops.length; i++) {
