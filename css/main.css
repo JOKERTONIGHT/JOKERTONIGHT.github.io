@@ -1220,7 +1220,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #30ffff;
+  background: #ff90ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2862,12 +2862,15 @@ h6 {
   height: auto;
   background-color: transparent;
 }
+.darkmode--activated .menu-item a {
+  color: #ccc !important;
+}
 .darkmode--activated .menu-item-active a {
-  background: rgba(255,255,255,0.1) !important;
-  color: #fff !important;
+  background: #444 !important;
+  color: #ccc !important;
 }
 .darkmode--activated .menu-item-active a::after {
-  color: #fff !important;
+  color: #ccc !important;
 }
 .header-inner {
   background: rgba(255,255,255,0.95);
