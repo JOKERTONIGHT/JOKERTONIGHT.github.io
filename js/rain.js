@@ -31,8 +31,8 @@
         l: Math.random() * 1 + 0.5, // Length multiplier
         xs: -1 + Math.random() * 2, // Slight wind
         ys: Math.random() * 15 + 15, // Speed: Fast
-        w: Math.random() * 1.5 + 0.1, // Random thickness: very thin to slightly thick
-        alpha: Math.random() * 0.3 + 0.05, // Random opacity: very faint to visible
+        w: Math.random() * 1.8 + 0.3, // Random thickness: thicker for visibility
+        alpha: Math.random() * 0.3 + 0.15, // Random opacity: more visible
         color: Math.random() > 0.9 ? '255,255,255' : '174,194,224' // Mostly blueish, some white sparkles
       });
     }
