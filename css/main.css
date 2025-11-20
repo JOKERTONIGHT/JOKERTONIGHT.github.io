@@ -1220,7 +1220,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff1aaa;
+  background: #ffabff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2759,11 +2759,11 @@ body {
 }
 .post-block,
 .comments {
-  background: rgba(253,246,227,0.95) !important;
-  border: 1px solid #d3c0a6;
-  box-shadow: 4px 4px 0px rgba(0,0,0,0.05);
+  background: rgba(255,255,255,0.9) !important;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   padding: 25px;
-  border-radius: 2px;
+  border-radius: 15px;
   margin-bottom: 20px;
 }
 h1,
@@ -2774,45 +2774,54 @@ h5,
 h6 {
   font-family: "Georgia", "Times New Roman", serif;
   font-weight: bold;
-  color: #333;
+  color: #222;
 }
 .post-body a {
-  color: #8b4513;
-  border-bottom: 1px dotted #8b4513;
+  color: #555;
+  border-bottom: 1px solid #999;
 }
 .post-body a:hover {
-  color: #a0522d;
-  border-bottom: 1px solid #a0522d;
+  color: #000;
+  border-bottom-color: #000;
 }
 .sidebar-inner {
-  background: rgba(253,246,227,0.9);
-  border: 1px solid #d3c0a6;
-  border-radius: 15px;
-  overflow: hidden;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 15px !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 .darkmode--activated .sidebar-inner {
   background: #2d2d2d !important;
-  border-color: #444;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 .darkmode-toggle {
   display: none !important;
 }
 .menu-item a {
   font-family: "Georgia", "Times New Roman", serif;
+  font-weight: 600;
+  color: #222 !important;
+}
+.header-inner {
+  background: rgba(255,255,255,0.95);
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 #rain-switch {
-  background: #fdf6e3 !important;
-  border: 2px solid #8b4513 !important;
-  color: #8b4513 !important;
+  background: rgba(255,255,255,0.9) !important;
+  border: 1px solid #ddd !important;
+  color: #555 !important;
   font-family: "Georgia", "Times New Roman", serif !important;
-  box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: all 0.3s;
 }
 #rain-switch:hover {
-  background: #8b4513 !important;
-  color: #fdf6e3 !important;
+  background: #f5f5f5 !important;
+  color: #333 !important;
 }
 #rain-switch.active {
-  background: #8b4513 !important;
-  color: #fdf6e3 !important;
+  background: #333 !important;
+  color: #fff !important;
+  border-color: #333 !important;
 }
