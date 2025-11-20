@@ -531,15 +531,6 @@ var options = {
 const darkmode = new Darkmode(options);
 window.darkmode = darkmode;
 darkmode.showWidget();
-if (window.darkmode && !window.darkmode.isActivated()) {
-  window.darkmode.toggle();
-  var toggleButtons = document.getElementsByClassName("darkmode-toggle");
-  if (toggleButtons && toggleButtons.length > 0) {
-    for (i = 0; i < toggleButtons.length; i++) {
-      toggleButtons[i].classList.add("darkmode-toggle--white");
-    }
-  }
-}
 </script>
 <canvas id="rain-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1;"></canvas>
 
