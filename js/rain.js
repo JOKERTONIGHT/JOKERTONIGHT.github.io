@@ -23,35 +23,35 @@
 
   function createRainDrops() {
     rainDrops = [];
-    var count = 150; 
+    var count = 350; // More drops for density
     for (var i = 0; i < count; i++) {
       rainDrops.push({
         x: Math.random() * w,
         y: Math.random() * h,
-        r: Math.random() * 2 + 1, // Radius for droplets
-        vy: Math.random() * 2 + 3, // Velocity Y
-        alpha: Math.random() * 0.4 + 0.2
+        l: Math.random() * 1 + 0.5, // Length multiplier
+        xs: -1 + Math.random() * 2, // Slight wind
+        ys: Math.random() * 15 + 15, // Speed: Fast
+        w: Math.random() * 1.5 + 0.1, // Random thickness: very thin to slightly thick
+        alpha: Math.random() * 0.3 + 0.05, // Random opacity: very faint to visible
+        color: Math.random() > 0.9 ? '255,255,255' : '174,194,224' // Mostly blueish, some white sparkles
       });
     }
   }
 
   function draw() {
     ctx.clearRect(0, 0, w, h);
-    
+    ctx.lineCap = 'round';
+
     for (var i = 0; i < rainDrops.length; i++) {
-      var d = rainDrops[i];
-      
-      // Draw Droplet
+      var p = rainDrops[i];
       ctx.beginPath();
-      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(200, 220, 255, ' + d.alpha + ')';
-      ctx.fill();
+      ctx.moveTo(p.x, p.y);
+      // Draw line based on velocity and length multiplier
+      ctx.lineTo(p.x + p.l * p.xs, p.y + p.l * p.ys);
       
-      // Add a small reflection/highlight
-      ctx.beginPath();
-      ctx.arc(d.x - d.r/3, d.y - d.r/3, d.r/3, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-      ctx.fill();
+      ctx.lineWidth = p.w;
+      ctx.strokeStyle = 'rgba(' + p.color + ',' + p.alpha + ')';
+      ctx.stroke();
     }
     move();
     if (isRaining) {
@@ -61,13 +61,12 @@
 
   function move() {
     for (var i = 0; i < rainDrops.length; i++) {
-      var d = rainDrops[i];
-      d.y += d.vy;
-      
-      // Reset if out of bounds
-      if (d.y > h) {
-        d.y = -10;
-        d.x = Math.random() * w;
+      var p = rainDrops[i];
+      p.x += p.xs;
+      p.y += p.ys;
+      if (p.x > w || p.y > h) {
+        p.x = Math.random() * w;
+        p.y = -20;
       }
     }
   }
