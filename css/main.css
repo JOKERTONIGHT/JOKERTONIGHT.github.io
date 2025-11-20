@@ -1220,7 +1220,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff90ff;
+  background: #f5939d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2732,6 +2732,7 @@ ul.breadcrumb li + li:last-child {
     margin: 8px 0 0;
   }
 }
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 body {
   background-image: url("/images/background.jpg");
   background-repeat: no-repeat;
@@ -2822,8 +2823,10 @@ h6 {
   border-bottom-color: #8abeb7 !important;
 }
 .site-title {
-  font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  font-family: 'Lobster', cursive;
+  font-size: 26px;
+  font-weight: normal;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
   color: #f5f5f5 !important;
 }
 .site-subtitle {
@@ -2842,7 +2845,7 @@ h6 {
 .menu-item-active a {
   background: rgba(0,0,0,0.05);
   color: #000 !important;
-  border-radius: 5px;
+  border-radius: 0;
   position: relative;
 }
 .menu-item-active a::before {
@@ -2866,8 +2869,9 @@ h6 {
   color: #ccc !important;
 }
 .darkmode--activated .menu-item-active a {
-  background: #444 !important;
+  background: rgba(255,255,255,0.08) !important;
   color: #ccc !important;
+  border-radius: 0;
 }
 .darkmode--activated .menu-item-active a::after {
   color: #ccc !important;
