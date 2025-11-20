@@ -121,6 +121,11 @@
     <a href="/" rel="section"><i class="fas fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-blog">
+
+    <a href="/blog/" rel="section"><i class="fas fa-pen fa-fw"></i>blog</a>
+
+  </li>
         <li class="menu-item menu-item-about">
 
     <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i>About</a>
@@ -541,6 +546,15 @@ if (window.darkmode && !window.darkmode.isActivated()) {
   }
 }
 </script>
+<canvas id="rain-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1;"></canvas>
+
+<div id="rain-switch-container" style="position: fixed; bottom: 20px; left: 20px; z-index: 9999;">
+  <button id="rain-switch" onclick="toggleRain()" style="background: transparent; border: 1px solid #ccc; padding: 5px 10px; cursor: pointer; font-family: inherit; color: #555; border-radius: 5px;">
+    <i class="fa fa-sun"></i> OFF
+  </button>
+</div>
+
+<script src="/js/rain.js"></script>
 
     </div>
 </body>
