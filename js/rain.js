@@ -1,26 +1,19 @@
 (function() {
+  // --- Rain Effect Logic ---
   var canvas = document.getElementById('rain-canvas');
   if (!canvas) return;
 
   var ctx = canvas.getContext('2d');
   var w, h;
   var rainDrops = [];
-  var isRaining = false; // Default state, controlled by switch
+  var isRaining = false;
   var animationId;
 
-  function init() {
+  function initRain() {
     resize();
     window.addEventListener('resize', resize);
     createRainDrops();
-    
-    // Check local storage for preference
-    var savedState = localStorage.getItem('rainEffect');
-    if (savedState === 'true') {
-      startRain();
-      updateSwitch(true);
-    } else {
-      updateSwitch(false);
-    }
+    // Initial state check is handled by the Dark Mode Observer
   }
 
   function resize() {
@@ -30,22 +23,22 @@
 
   function createRainDrops() {
     rainDrops = [];
-    var count = 100; // Number of drops
+    var count = 200; // Increased count
     for (var i = 0; i < count; i++) {
       rainDrops.push({
         x: Math.random() * w,
         y: Math.random() * h,
         l: Math.random() * 1,
         xs: -4 + Math.random() * 4 + 2,
-        ys: Math.random() * 10 + 10
+        ys: Math.random() * 10 + 20 // Faster speed
       });
     }
   }
 
   function draw() {
     ctx.clearRect(0, 0, w, h);
-    ctx.strokeStyle = 'rgba(174,194,224,0.5)';
-    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(174,194,224,0.8)'; // More visible
+    ctx.lineWidth = 1.5;
     ctx.lineCap = 'round';
 
     for (var i = 0; i < rainDrops.length; i++) {
@@ -86,33 +79,88 @@
     ctx.clearRect(0, 0, w, h);
   }
 
-  function toggleRain() {
-    if (isRaining) {
-      stopRain();
-      localStorage.setItem('rainEffect', 'false');
-      updateSwitch(false);
-    } else {
-      startRain();
-      localStorage.setItem('rainEffect', 'true');
-      updateSwitch(true);
+  // --- Switch & Dark Mode Logic ---
+  function toggleMode() {
+    // Trigger the default darkmode-js button
+    var defaultBtn = document.querySelector('.darkmode-toggle');
+    if (defaultBtn) {
+      defaultBtn.click();
     }
   }
 
-  function updateSwitch(active) {
+  function updateSwitchUI(isDark) {
     var btn = document.getElementById('rain-switch');
     if (btn) {
-      if (active) {
+      if (isDark) {
         btn.classList.add('active');
-        btn.innerHTML = '<i class="fa fa-cloud-showers-heavy"></i> ON';
+        btn.innerHTML = '<i class="fa fa-cloud-showers-heavy"></i> Rainy';
+        startRain();
       } else {
         btn.classList.remove('active');
-        btn.innerHTML = '<i class="fa fa-sun"></i> OFF';
+        btn.innerHTML = '<i class="fa fa-sun"></i> Sunny';
+        stopRain();
       }
     }
   }
 
-  // Expose toggle function globally
-  window.toggleRain = toggleRain;
+  function initSwitch() {
+    // Observer for Dark Mode class on body
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.attributeName === "class") {
+          var isDark = document.body.classList.contains('darkmode--activated');
+          updateSwitchUI(isDark);
+        }
+      });
+    });
 
-  init();
+    observer.observe(document.body, {
+      attributes: true
+    });
+
+    // Initial check
+    var isDark = document.body.classList.contains('darkmode--activated');
+    updateSwitchUI(isDark);
+  }
+
+  // --- Navigation Logic ---
+  function initNav() {
+    var path = window.location.pathname;
+    // Check if Home (About) page
+    // Assuming Home is '/' or '/index.html' or '/about/' based on user setup
+    var isHome = path === '/' || path === '/index.html' || path.startsWith('/about/');
+    
+    if (isHome) {
+      // Hide extra menu items
+      var itemsToHide = [
+        '.menu-item-movies',
+        '.menu-item-categories',
+        '.menu-item-archives',
+        '.menu-item-search',
+        '.menu-item-tags'
+      ];
+      
+      itemsToHide.forEach(function(selector) {
+        var el = document.querySelector(selector);
+        if (el) el.style.display = 'none';
+      });
+    }
+  }
+
+  // Expose toggle function globally
+  window.toggleRain = toggleMode;
+
+  // Initialize
+  initRain();
+  initSwitch();
+  // Run nav logic after DOM load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNav);
+  } else {
+    initNav();
+  }
+  
+  // Handle PJAX
+  document.addEventListener('pjax:success', initNav);
+
 })();

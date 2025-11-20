@@ -1220,7 +1220,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #d1ffff;
+  background: #ff1aaa;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2787,6 +2787,15 @@ h6 {
 .sidebar-inner {
   background: rgba(253,246,227,0.9);
   border: 1px solid #d3c0a6;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.darkmode--activated .sidebar-inner {
+  background: #2d2d2d !important;
+  border-color: #444;
+}
+.darkmode-toggle {
+  display: none !important;
 }
 .menu-item a {
   font-family: "Georgia", "Times New Roman", serif;
